@@ -15,7 +15,7 @@ describe('Home Page', () => {
 
     });
 
-    it('should display a list of courses', () => {
+    it('should display a list of course', () => {
 
         cy.contains("All Courses");
 
@@ -27,19 +27,19 @@ describe('Home Page', () => {
 
     it('should display the advanced courses', () => {
 
-        cy.get('.mat-tab-label').should("have.length", 2);
+        cy.get('.mdc-tab').should("have.length", 2);
 
-        cy.get('.mat-tab-label').last().click();
+        cy.get('.mdc-tab').last().click();
 
-        cy.get('.mat-tab-body-active .mat-card-title').its('length').should('be.gt', 1);
+        cy.get('.mat-mdc-tab-body-active .mat-mdc-card-title').its('length').should('be.gt', 1);
 
-        cy.get('.mat-tab-body-active .mat-card-title').first()
+        cy.get('.mat-mdc-tab-body-active .mat-mdc-card-title').first()
             .should('contain', "Angular Security Course");
 
     });
 
-
 });
+
 
 
 
